@@ -298,44 +298,44 @@ void createTimeSentence(byte hour, byte minute)
   appendWord(IS, &nIS);
     
   // IT IS FIVE PAST nnn
-  if(minute > 2 && minute <= 6) {
+  if(minute > 3 && minute <= 8) {
     appendWord(FIVE, &nFIVE);
     appendWord(PAST, &nPAST);
     appendWord(ptrHour, ptrHourLength);
   }
   // IT IS TEN PAST nnn
-  if(minute > 6 && minute <= 11) { 
+  if(minute > 8 && minute <= 13) { 
     appendWord(TEN, &nTEN);
     appendWord(PAST, &nPAST);
     appendWord(ptrHour, ptrHourLength);
   }
   // IT IS QUARTER PAST nnn
-  if(minute > 11 && minute <= 16) { 
+  if(minute > 13 && minute <= 18) { 
     appendWord(QUARTER, &nQUARTER);
     appendWord(PAST, &nPAST);
     appendWord(ptrHour, ptrHourLength);
   }
   // IT IS TWENTY PAST nnn
-  if(minute > 16 && minute <= 21) { 
+  if(minute > 18 && minute <= 23) { 
     appendWord(TWENTY, &nTWENTY);
     appendWord(PAST, &nPAST);
     appendWord(ptrHour, ptrHourLength);
   }
   // IT IS TWENTY FIVE PAST nnn
-  if(minute > 21 && minute <= 26) { 
+  if(minute > 23 && minute <= 28) { 
     appendWord(TWENTY, &nTWENTY);
     appendWord(FIVE, &nFIVE);
     appendWord(PAST, &nPAST);
     appendWord(ptrHour, ptrHourLength);
   }
   // IT IS HALF PAST nnn
-  if(minute > 26 && minute <= 31) { 
+  if(minute > 28 && minute <= 33) { 
     appendWord(HALF, &nHALF);
     appendWord(PAST, &nPAST);
     appendWord(ptrHour, ptrHourLength);
   }
   // IT IS TWENTY FIVE TO nnn
-  if(minute > 31 && minute <= 36) {
+  if(minute > 33 && minute <= 38) {
     ptrToHour(hour+1, &ptrHour, &ptrHourLength);
     appendWord(TWENTY, &nTWENTY);
     appendWord(FIVE, &nFIVE);
@@ -343,35 +343,35 @@ void createTimeSentence(byte hour, byte minute)
     appendWord(ptrHour, ptrHourLength);
   }
   // IT IS TWENTY TO nnn
-  if(minute > 36 && minute <= 41) {
+  if(minute > 38 && minute <= 44) {
     ptrToHour(hour+1, &ptrHour, &ptrHourLength);
     appendWord(TWENTY, &nTWENTY);
     appendWord(TO, &nTO);
     appendWord(ptrHour, ptrHourLength);
   }
   // IT IS QUARTER TO nnn
-  if(minute > 41 && minute <= 46) { 
+  if(minute > 44 && minute <= 48) { 
     ptrToHour(hour+1, &ptrHour, &ptrHourLength);
     appendWord(QUARTER, &nQUARTER);
     appendWord(TO, &nTO);
     appendWord(ptrHour, ptrHourLength);
   }
   // IT IS TEN TO nnn
-  if(minute > 46 && minute <= 51) {
+  if(minute > 48 && minute <= 53) {
     ptrToHour(hour+1, &ptrHour, &ptrHourLength);
     appendWord(TEN, &nTEN);
     appendWord(TO, &nTO);
     appendWord(ptrHour, ptrHourLength);
   }
   // IT IS FIVE TO nnn
-  if(minute > 51 && minute <= 58) {
+  if(minute > 53 && minute <= 58) {
     ptrToHour(hour+1, &ptrHour, &ptrHourLength);
     appendWord(FIVE, &nFIVE);
     appendWord(TO, &nTO);
     appendWord(ptrHour, ptrHourLength);
   }
   // IT IS nnn O'CLOCK
-  if(minute >= 59 || minute <= 2)
+  if(minute >= 59 || minute <= 3)
   {
     if(minute >= 59)
     {
@@ -554,7 +554,7 @@ void loop()
     Serial.print(1.8 * T + 32.0, 2);
     Serial.println(" F");
     
-    showTemperature((byte) T + 1, 5 /* seconds */);
+    showTemperature((byte) T + 1, 3 /* seconds */);
     
     __temperatureWallTime = millis() + SHOW_TEMP_AFTER_MILLIS;
   
